@@ -2,7 +2,7 @@
 using System;
 
 
-namespace ReCapProject.Entities
+namespace ReCapProject.Entities.Concrete
 {
     public class Brand : IEntity
     {

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using ReCapProject.Entities;
+using ReCapProject.Entities.Concrete;
+using ReCapProject.Entities.DTOs;
 
 namespace ReCapProject.BLL.Abstract
 {
@@ -13,5 +15,7 @@ namespace ReCapProject.BLL.Abstract
         List<Car> GetCarsByColorID(int colorID);
 
         void Add(Car car);
+
+        List<CarDetailDTO> GetCarDetails();
     }
 }

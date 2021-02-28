@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.EntityFrameworkCore;
 using ReCapProject.Entities;
+using ReCapProject.Entities.Concrete;
 
 namespace ReCapProject.DAL.Concrete.EntityFramework
 {
@@ -13,8 +14,8 @@ namespace ReCapProject.DAL.Concrete.EntityFramework
            optionsBuilder.UseSqlServer(@"Server=.;Database=ReCapProject;User Id=sa;Password=123;");
         }
 
-        public DbSet<Car> Cars { get; set; }
-        public DbSet<Brand> Brands { get; set; }
-        public DbSet<Color> Colors { get; set; }
+        public virtual DbSet<Car> Cars { get; set; }
+        public virtual DbSet<Brand> Brands { get; set; }
+        public virtual DbSet<Color> Colors { get; set; }
     }
 }

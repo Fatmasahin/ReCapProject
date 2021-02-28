@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using ReCapProject.BLL.Abstract;
 using ReCapProject.DAL.Abstract;
 using ReCapProject.Entities;
+using ReCapProject.Entities.Concrete;
+using ReCapProject.Entities.DTOs;
 
 namespace ReCapProject.BLL.Concrete
 {
@@ -54,5 +56,10 @@ namespace ReCapProject.BLL.Concrete
 		{
             return price > 0;
 		}
-    }
+
+		public List<CarDetailDTO> GetCarDetails()
+		{
+            return _carDAL.GetCarDetails();
+		}
+	}
 }

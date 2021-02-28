@@ -9,8 +9,14 @@ namespace ConsoleUI
 		static void Main(string[] args)
 		{
 			CarManager carManager = new CarManager(new CarDAL());
-			carManager.GetAllCars();
-			Console.WriteLine("Çalıştı");
+			
+			foreach (var carDetail in carManager.GetCarDetails())
+			{
+				
+				Console.WriteLine($"Marka:{carDetail.BrandName.Trim()},İsim : {carDetail.CarName}, Renk: {carDetail.ColorName}, Fiyat: {Decimal.Round(carDetail.DailyPrice,2)} TL");
+
+			}
+			
 		}
 	}
 }

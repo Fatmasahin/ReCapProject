@@ -1,7 +1,7 @@
 ﻿using System;
 using ReCapProject.Core.Entities;
 
-namespace ReCapProject.Entities
+namespace ReCapProject.Entities.Concrete
 {
     public class Color:IEntity
     {
