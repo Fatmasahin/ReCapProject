@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.808.4
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReCapProject.Core", "ReCapProject.Core\ReCapProject.Core.csproj", "{0F0649FA-E3E0-4BCC-8A2B-BA28FA957996}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReCapProject.Core", "ReCapProject.Core\ReCapProject.Core.csproj", "{0F0649FA-E3E0-4BCC-8A2B-BA28FA957996}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReCapProject.Entities", "ReCapProject.Entities\ReCapProject.Entities.csproj", "{4597059B-8D6A-49A7-8A17-79D219D78BC3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReCapProject.Entities", "ReCapProject.Entities\ReCapProject.Entities.csproj", "{4597059B-8D6A-49A7-8A17-79D219D78BC3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReCapProject.DAL", "ReCapProject.DAL\ReCapProject.DAL.csproj", "{C50467E8-58AB-43C8-8E40-FAF6B1264F05}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReCapProject.DAL", "ReCapProject.DAL\ReCapProject.DAL.csproj", "{C50467E8-58AB-43C8-8E40-FAF6B1264F05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReCapProject.BLL", "ReCapProject.BLL\ReCapProject.BLL.csproj", "{DAF26DDE-1DB6-4530-B83C-B62BE8F7C254}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ReCapProject.BLL", "ReCapProject.BLL\ReCapProject.BLL.csproj", "{DAF26DDE-1DB6-4530-B83C-B62BE8F7C254}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleUI", "ConsoleUI\ConsoleUI.csproj", "{0F401DBC-C203-49BB-B22C-05BE40401B3A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{DAF26DDE-1DB6-4530-B83C-B62BE8F7C254}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DAF26DDE-1DB6-4530-B83C-B62BE8F7C254}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DAF26DDE-1DB6-4530-B83C-B62BE8F7C254}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F401DBC-C203-49BB-B22C-05BE40401B3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F401DBC-C203-49BB-B22C-05BE40401B3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F401DBC-C203-49BB-B22C-05BE40401B3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F401DBC-C203-49BB-B22C-05BE40401B3A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -9,5 +9,9 @@ namespace ReCapProject.BLL.Abstract
         List<Car> GetAllCars();
         List<Car> GetCarsByBrandId(int brandId);
         Car GetCarById(int carId);
+
+        List<Car> GetCarsByColorID(int colorID);
+
+        void Add(Car car);
     }
 }
