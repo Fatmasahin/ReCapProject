@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using ReCapProject.BLL.Abstract;
+using ReCapProject.BLL.Constants;
+using ReCapProject.Core.Utilities.Results;
 using ReCapProject.DAL.Abstract;
 using ReCapProject.Entities;
 using ReCapProject.Entities.Concrete;
@@ -18,48 +20,51 @@ namespace ReCapProject.BLL.Concrete
         }
 
 		
-		public List<Car> GetAllCars()
+		public IDataResult<List<Car>> GetAllCars()
         {
-            return _carDAL.GetAll();
+            return new SuccessDataResult<List<Car>>(_carDAL.GetAll());
         }
 
-        public Car GetCarById(int carId)
+        public IDataResult<Car> GetCarById(int carId)
         {
-            return _carDAL.Get(i=>i.ID==carId);
+            return new SuccessDataResult<Car>(_carDAL.Get(i => i.ID == carId));
         }
 
-        public List<Car> GetCarsByBrandId(int brandId)
+        public IDataResult<List<Car>> GetCarsByBrandId(int brandId)
         {
-            return _carDAL.GetAll(i=>i.BrandId==brandId);
+            return new SuccessDataResult<List<Car>>(_carDAL.GetAll(i => i.BrandId == brandId));
         }
 
-		public List<Car> GetCarsByColorID(int colorID)
+		public IDataResult<List<Car>> GetCarsByColorID(int colorID)
 		{
-            return _carDAL.GetAll(i=>i.ColorId==colorID);
+            return new SuccessDataResult<List<Car>>(_carDAL.GetAll(i => i.ColorId == colorID));
 		}
 
-        public void Add(Car car)
+        public IResult Add(Car car)
         {
 			if (CarNameLengthControl(car.Name) && CarPriceMustPositive(car.DailyPrice))
 			{
-                 _carDAL.Add(car);
+                _carDAL.Add(car);
+             return new SuccessResult(Messages.ProductAdded);
 			}
+            return new ErrorResult();
         }
 
+		public IDataResult<List<CarDetailDTO>> GetCarDetails()
+		{
+
+            return new SuccessDataResult<List<CarDetailDTO>>(_carDAL.GetCarDetails());
+		}
 
         public bool CarNameLengthControl(string name)
-		{
+        {
             return name.Length >= 2;
-		}
+        }
 
         public bool CarPriceMustPositive(decimal price)
-		{
+        {
             return price > 0;
-		}
+        }
 
-		public List<CarDetailDTO> GetCarDetails()
-		{
-            return _carDAL.GetCarDetails();
-		}
-	}
+    }
 }

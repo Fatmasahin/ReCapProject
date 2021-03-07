@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ReCapProject.BLL\ReCapProject.BLL.csproj" />
+    <ProjectReference Include="..\ReCapProject.Core\ReCapProject.Core.csproj" />
+    <ProjectReference Include="..\ReCapProject.Entities\ReCapProject.Entities.csproj" />
+  </ItemGroup>
+
+
+</Project>

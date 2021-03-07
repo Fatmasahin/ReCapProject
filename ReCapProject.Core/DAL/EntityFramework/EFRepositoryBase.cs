@@ -18,6 +18,7 @@ namespace ReCapProject.Core.DAL.EntityFramework
                 var result = context.Entry(entity);
                 result.State = EntityState.Added;
                 context.SaveChanges();
+                
             }
         }
 
