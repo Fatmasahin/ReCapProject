@@ -8,6 +8,9 @@
     <ProjectReference Include="..\ReCapProject.BLL\ReCapProject.BLL.csproj" />
     <ProjectReference Include="..\ReCapProject.Core\ReCapProject.Core.csproj" />
     <ProjectReference Include="..\ReCapProject.Entities\ReCapProject.Entities.csproj" />
+    <ProjectReference Include="..\ReCapProject.DAL\ReCapProject.DAL.csproj">
+      <GlobalPropertiesToRemove></GlobalPropertiesToRemove>
+    </ProjectReference>
   </ItemGroup>
 
 

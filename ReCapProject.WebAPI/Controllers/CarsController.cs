@@ -3,7 +3,6 @@ using Microsoft.AspNetCore.Mvc;
 using ReCapProject.BLL.Abstract;
 using ReCapProject.BLL.Concrete;
 using ReCapProject.Core.Utilities.Results;
-using ReCapProject.DAL.Concrete.EntityFramework;
 using ReCapProject.Entities.Concrete;
 using System;
 using System.Collections.Generic;
@@ -23,11 +22,37 @@ namespace ReCapProject.WebAPI.Controllers
 			_carService = carService;
 		}
 
-		[HttpGet]
-		public IDataResult<List<Car>> GetAll()
+		[HttpGet("getall")]
+		public IActionResult GetAll()
 		{
-			return _carService.GetAllCars();
+			var result=_carService.GetAllCars();
+            if (result.Success)
+            {
+				return Ok(result);
+            }
+			return BadRequest();
 
 		}
+		[HttpGet("getbyid")]
+		public IActionResult GetById(int id)
+        {
+			var result = _carService.GetCarById(id);
+            if (result.Success)
+            {
+				return Ok(result);
+            }
+			return BadRequest();
+        }
+
+		[HttpPost("add")]
+		public IActionResult Add(Car car)
+        {
+			var result = _carService.Add(car);
+            if (result.Success)
+            {
+				return Ok();
+            }
+			return BadRequest();
+        }
 	}
 }
