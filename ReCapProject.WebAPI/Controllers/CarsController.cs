@@ -1,5 +1,10 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using ReCapProject.BLL.Abstract;
+using ReCapProject.BLL.Concrete;
+using ReCapProject.Core.Utilities.Results;
+using ReCapProject.DAL.Concrete.EntityFramework;
+using ReCapProject.Entities.Concrete;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,12 +16,18 @@ namespace ReCapProject.WebAPI.Controllers
 	[ApiController]
 	public class CarsController : ControllerBase
 	{
-		[HttpGet]
-		public string Get()
+		ICarService _carService;
+
+		public CarsController(ICarService carService)
 		{
-			return "Merhaba";
+			_carService = carService;
 		}
-		
-		
+
+		[HttpGet]
+		public IDataResult<List<Car>> GetAll()
+		{
+			return _carService.GetAllCars();
+
+		}
 	}
 }
