@@ -6,10 +6,18 @@
 
   <ItemGroup>
     <Folder Include="Abstract\" />
+    <Folder Include="DependencyResolvers\" />
+    <Folder Include="DependencyResolvers\Autofac\" />
+    <Folder Include="ValidationRules\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ReCapProject.Entities\ReCapProject.Entities.csproj" />
     <ProjectReference Include="..\ReCapProject.DAL\ReCapProject.DAL.csproj" />
     <ProjectReference Include="..\ReCapProject.Core\ReCapProject.Core.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Autofac" Version="6.1.0" />
+    <PackageReference Include="Autofac.Extras.DynamicProxy" Version="6.0.0" />
+    <PackageReference Include="FluentValidation" Version="9.5.2" />
   </ItemGroup>
 </Project>

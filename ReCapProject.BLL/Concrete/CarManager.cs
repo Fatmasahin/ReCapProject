@@ -1,7 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using FluentValidation;
 using ReCapProject.BLL.Abstract;
 using ReCapProject.BLL.Constants;
+using ReCapProject.BLL.ValidationRules;
+using ReCapProject.Core.Aspects.Autofac.Validation;
+using ReCapProject.Core.CrossCuttingConcerns.Validation;
 using ReCapProject.Core.Utilities.Results;
 using ReCapProject.DAL.Abstract;
 using ReCapProject.Entities;
@@ -13,7 +17,6 @@ namespace ReCapProject.BLL.Concrete
     public class CarManager : ICarService
     {
         ICarDAL _carDAL;
-        IBrandDAL _brandDAL;
         public CarManager(ICarDAL carDAL)
         {
             _carDAL = carDAL;
@@ -40,14 +43,12 @@ namespace ReCapProject.BLL.Concrete
             return new SuccessDataResult<List<Car>>(_carDAL.GetAll(i => i.ColorId == colorID));
 		}
 
+        [ValidationAspect(typeof(CarValidator))]
         public IResult Add(Car car)
         {
-			if (CarNameLengthControl(car.Name) && CarPriceMustPositive(car.DailyPrice))
-			{
-                _carDAL.Add(car);
-             return new SuccessResult(Messages.ProductAdded);
-			}
-            return new ErrorResult();
+           
+            _carDAL.Add(car);
+            return new SuccessResult(Messages.ProductAdded);
         }
 
 		public IDataResult<List<CarDetailDTO>> GetCarDetails()
@@ -56,15 +57,7 @@ namespace ReCapProject.BLL.Concrete
             return new SuccessDataResult<List<CarDetailDTO>>(_carDAL.GetCarDetails());
 		}
 
-        public bool CarNameLengthControl(string name)
-        {
-            return name.Length >= 2;
-        }
-
-        public bool CarPriceMustPositive(decimal price)
-        {
-            return price > 0;
-        }
+      
 
     }
 }
