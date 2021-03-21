@@ -8,7 +8,7 @@ namespace ConsoleUI
 	{
 		static void Main(string[] args)
 		{
-			CarManager carManager = new CarManager(new CarDAL());
+			CarManager carManager = new CarManager(new CarDAL(),new BrandManager(new BrandDAL()));
 			
 			foreach (var carDetail in carManager.GetCarDetails().Data)
 			{ 
