@@ -45,7 +45,7 @@ namespace ReCapProject.BLL.Concrete
 		{
             return new SuccessDataResult<List<Car>>(_carDAL.GetAll(i => i.ColorId == colorID));
 		}
-
+        [SecuredOperation]
         [ValidationAspect(typeof(CarValidator))]
         public IResult Add(Car car)
         {
